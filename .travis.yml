@@ -8,11 +8,10 @@ before_script:
   - bundle exec rake db:migrate
 deploy:
   provider: heroku
-  api_key:
-    api_key: HEROKU_API_KEY
- app:
+  api_key: HEROKU_API_KEY
+  app:
     staging: trainer-app-api-staging
     master: trainer-app-api-prod
-  run:
-    - "rake db:migrate"
-    - "rake cleanup"
+    run:
+      - "rake db:migrate"
+      - "rake cleanup"
