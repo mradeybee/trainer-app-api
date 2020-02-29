@@ -4,8 +4,8 @@ rvm:
 cache:
   - bundler
 before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
 deploy:
   provider: heroku
   api_key: HEROKU_API_KEY
@@ -13,5 +13,5 @@ deploy:
     staging: trainer-app-api-staging
     master: trainer-app-api-prod
     run:
-      - "rake db:migrate"
-      - "rake cleanup"
+      - "rails db:migrate"
+      - "rails cleanup"
