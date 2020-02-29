@@ -14,7 +14,7 @@ deploy:
     staging: trainer-app-api-staging
     master: trainer-app-api-prod
   on:
-    repo: mradeybee/time-tracker-api
+    repo: mradeybee/trainer-app-api
   run:
     - "rake db:migrate"
     - "rake cleanup"
