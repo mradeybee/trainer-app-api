@@ -37,4 +37,12 @@ RSpec.describe User, type: :model do
       expect(subject.set_tos_agreed_time).to_not be nil
     end
   end
+
+   context 'generate refresh token' do
+    subject { Fabricate(:user) }
+
+    it 'generates refresh token' do
+      expect(subject.refresh_token).to_not be nil
+    end
+  end
 end

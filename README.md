@@ -1,25 +1,60 @@
-# README
+# Trainer APP API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# End Points Functionalities
 
-Things you may want to cover:
+|       End Point        |                  Body Payload                  |       Description       | Require Auth Token |
+| :--------------------: | :--------------------------------------------: | :---------------------: | :----------------: |
+|    **POST /users/**    | email, password, firstname, lastname, username |   Create User/Sign Up   |       false        |
+|  **POST /auth/login**  |                email, password                 |       Login user        |       false        |
+| **POST /auth/logout**  |                 referesh_token                 |      Log out user       |        true        |
+| **POST /auth/refresh** |                 referesh_token                 | Refresh user auth token |        true        |
 
-* Ruby version
+---
 
-* System dependencies
+# Running The Application
 
-* Configuration
+- Clone or download the repo
 
-* Database creation
+```
+git clone git@github.com:mradeybee/time-tracker-api.git
+```
 
-* Database initialization
+- Navigate to the app directory
 
-* How to run the test suite
+```
+cd trainer-app-api
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+- Bundle dependencies
 
-* Deployment instructions
+```
+bundle install
+```
 
-* ...
-# trainer-app-api
+- Run Database setup
+
+```
+rails db:create && rails db:migrate
+```
+
+- Setup environment variables
+
+```
+export SECRET='<A SECRETE TOKEN>'
+```
+
+- Start the application
+
+```
+rails server
+```
+
+---
+
+# Running Tests
+
+The tests are run using RSpec.
+
+```
+rspec
+```
