@@ -8,12 +8,3 @@ services:
 before_script:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
-deploy:
-  provider: heroku
-  api_key: $HEROKU_API_KEY
-  app:
-    staging: trainer-app-api-staging
-    master: trainer-app-api-prod
-    run:
-      - "rails db:migrate"
-      - "rails cleanup"
