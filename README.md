@@ -16,7 +16,7 @@
 - Clone or download the repo
 
 ```
-git clone git@github.com:mradeybee/time-tracker-api.git
+git clone git@github.com:Temanconsult/trainer-app-api.git
 ```
 
 - Navigate to the app directory
