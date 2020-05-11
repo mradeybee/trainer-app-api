@@ -2,12 +2,13 @@
 
 # End Points Functionalities
 
-|       End Point        |                  Body Payload                  |       Description       | Require Auth Token |
-| :--------------------: | :--------------------------------------------: | :---------------------: | :----------------: |
-|    **POST /users/**    | email, password, firstname, lastname, username |   Create User/Sign Up   |       false        |
-|  **POST /auth/login**  |                email, password                 |       Login user        |       false        |
-| **POST /auth/logout**  |                 referesh_token                 |      Log out user       |        true        |
-| **POST /auth/refresh** |                 referesh_token                 | Refresh user auth token |        true        |
+|             End Point             |                  Body Payload                  |       Description       | Require Auth Token |
+| :-------------------------------: | :--------------------------------------------: | :---------------------: | :----------------: |
+|         **POST /users/**          | email, password, firstname, lastname, username |   Create User/Sign Up   |       false        |
+|       **POST /auth/login**        |                email, password                 |       Login user        |       false        |
+|       **POST /auth/logout**       |                 referesh_token                 |      Log out user       |        true        |
+|      **POST /auth/refresh**       |                 referesh_token                 | Refresh user auth token |        true        |
+| **PATCH /email_confirmation/:id** |                                                |   confirms user emil    |       false        |
 
 ---
 
