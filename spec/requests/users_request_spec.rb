@@ -2,19 +2,23 @@ require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
   valid_user_params = {
-    firstname: "firstname",
-    lastname: "lastname",
-    username: "username",
-    password: "password",
-    email: "user1@email.com"
+    payload: {
+      firstname: "firstname",
+      lastname: "lastname",
+      username: "username",
+      password: "password",
+      email: "user1@email.com"
+    }
   }
 
   invalid_email_user_params = {
-    firstname: "firstname",
-    lastname: "lastname",
-    username: "username",
-    password: "password",
-    email: "user1email.com"
+    payload: {
+      firstname: "firstname",
+      lastname: "lastname",
+      username: "username",
+      password: "password",
+      email: "user1email.com"
+    }
   }
 
   describe "GET /index" do
@@ -58,7 +62,7 @@ RSpec.describe "Users", type: :request do
         end
 
         it 'return an error if email is blank' do
-          post '/users', params:  {auth: {password: 'paSSw0Rd!', email: ''}}
+          post '/users', params:  {payload: {password: 'paSSw0Rd!', email: ''}}
   
           expect(response.status).to eql 422
           expect(JSON.parse(response.body)['errors']).to include("Email can't be blank")
@@ -67,7 +71,7 @@ RSpec.describe "Users", type: :request do
       
       context 'empty password' do
         it 'return an error if password is blank' do
-          post '/users', params:  {auth: {password: '', email: 'james@email.com'}}
+          post '/users', params:  {payload: {password: '', email: 'james@email.com'}}
   
           expect(response.status).to eql 422
           expect(JSON.parse(response.body)['errors']).to include("Password can't be blank")
