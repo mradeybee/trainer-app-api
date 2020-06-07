@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:id, :email, :password, :firstname, :lastname, :username)
+    params.require(:payload).permit(:id, :email, :password, :firstname, :lastname, :username)
   end
 end
