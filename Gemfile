@@ -17,7 +17,8 @@ gem 'puma', '~> 4.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'jwt'
-
+gem 'graphql', '1.9.17'
+gem 'sass-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'jsonapi-rails'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'fabrication'
   gem 'pry'
   gem 'database_cleaner'
+  gem 'graphiql-rails', '1.7.0'
 end
 
 group :development do

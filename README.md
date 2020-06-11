@@ -12,42 +12,114 @@
 
 ---
 
+## GrapQL Schema
+
+> All graphql reqests are `POST` requests to `/v2/graphql`
+
+### Create User
+
+```JavaScript
+mutation {
+  createUser(
+    firstname: "John",
+    lastname: "Doe",
+    username: "jdoe",
+    authProvider: {
+      credentials: {
+        email: "doe@email.com",
+        password: "passpass",
+      }
+    }
+    ){
+    error
+    jwt
+    user {...}
+  }
+}
+
+```
+
+### Sign in User
+
+```JavaScript
+mutation {
+ signinUser(
+  credentials: {
+    password: "passass",
+    email: "jdoe@email.com"
+  }
+) {
+  error
+  jwt
+  user {...}
+ }
+}
+
+```
+
+### User Object
+
+```JavaScript
+  {
+    firstname
+    lastname
+    email
+    username
+    tosAgreedAt
+    refreshToken
+  }
+```
+
+---
+
 # Running The Application
 
 - Clone or download the repo
 
 ```
+
 git clone git@github.com:Temanconsult/trainer-app-api.git
+
 ```
 
 - Navigate to the app directory
 
 ```
+
 cd trainer-app-api
+
 ```
 
 - Bundle dependencies
 
 ```
+
 bundle install
+
 ```
 
 - Run Database setup
 
 ```
+
 rails db:create && rails db:migrate
+
 ```
 
 - Setup environment variables
 
 ```
+
 export SECRET='<A SECRETE TOKEN>'
+
 ```
 
 - Start the application
 
 ```
+
 rails server
+
 ```
 
 ---
@@ -57,5 +129,7 @@ rails server
 The tests are run using RSpec.
 
 ```
+
 rspec
+
 ```
