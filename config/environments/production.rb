@@ -82,7 +82,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.x.urls.ui_app = 'https://trainer-app-ui-prod.herokuapp.com/'
+  config.x.urls.ui_app = 'https://trainer-app-next-prod.herokuapp.com/'
   
   config.action_mailer.delivery_method = :smtp
 

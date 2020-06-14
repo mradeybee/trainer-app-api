@@ -9,17 +9,21 @@ module Mutations
     argument :lastname, String, required: true
     argument :username, String, required: true
 
-    # return type from the mutation
-    type Types::UserType
+    field :error, String, null: false
+    field :user, Types::UserType, null: true
 
     def resolve(auth_provider: nil, firstname: nil, lastname: nil, username: nil)
-      User.create!(
+      user = User.create(
        password: auth_provider&.[](:credentials)&.[](:password),
        email: auth_provider&.[](:credentials)&.[](:email),
        firstname: firstname,
        lastname: lastname, 
        username: username
       )
+
+      data =  user.errors.present? ? nil : user
+
+      {user: data, error: user.errors.full_messages.join(", ")}
     end
   end
 end
