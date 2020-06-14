@@ -1,0 +1,5 @@
+<%= paragraph("Hi #{@user.firstname},") %>
+<%= paragraph("Thank your for signing up to Best Tutors.") %>
+<%= paragraph("Let's get your account setup going.") %>
+<%= paragraph('Use the link below to confirm your email.') %>
+<%= button(ui_url("confirmation?token=#{@confirmation.token}"), 'Confirm Email', 'confirm-email-button') %>
