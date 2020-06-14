@@ -3,8 +3,7 @@ class User < ApplicationRecord
   
   has_secure_password
   validates_presence_of :email, :password_digest, :firstname, :lastname, :username
-  validates_uniqueness_of :email, on: [:create, :update]
-  validates_uniqueness_of :username, on: [:create, :update], message: "is taken"
+  validates_uniqueness_of :username, on: [:create, :update], message: "has already been taken"
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
