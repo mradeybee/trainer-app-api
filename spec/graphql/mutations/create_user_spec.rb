@@ -18,7 +18,6 @@ RSpec.describe 'Mutations::CreateUserTest' do
     }
     )
 
-    expect(user.persisted?).to be true
-    expect(user.refresh_token.present?).to be true
+    expect(user[:user].present?).to be true
   end
 end
