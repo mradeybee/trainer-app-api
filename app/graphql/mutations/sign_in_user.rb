@@ -4,7 +4,7 @@ module Mutations
 
     argument :credentials, Types::AuthInput, required: false
 
-    field :error, String, null: false
+    field :error, String, null: true
     field :jwt, String, null: true
     field :user, Types::UserType, null: true
 
