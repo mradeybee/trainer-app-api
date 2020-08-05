@@ -23,6 +23,7 @@ gem 'sass-rails'
 # gem 'image_processing', '~> 1.2'
 gem 'jsonapi-rails'
 gem 'rails-observers'
+gem 'graphiql-rails', '1.7.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'fabrication'
   gem 'pry'
   gem 'database_cleaner'
-  gem 'graphiql-rails', '1.7.0'
 end
 
 group :development do
